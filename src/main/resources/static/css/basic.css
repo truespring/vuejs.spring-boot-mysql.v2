@@ -10,29 +10,86 @@
   font-family: 'GmarketSansMedium', serif;
 }
 
+html, body {
+  width: 100%;
+  height: 100%
+}
+
+body {
+  margin: 0;
+  font-size: 11pt;
+  font-weight: 300;
+  color: #6c6c6c
+}
+
 div {
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  margin: 10px 0 0 10px;
   min-height: 100px;
   text-align: center;
   line-height: 100px;
 }
 
-#aside {
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+#aside-container {
   float: left;
   width: 200px;
-  height: 350px;
+  height: 100%;
   line-height: 350px;
+  background-color: #FFFFFF;
 }
 
 #container {
-  float: left;
-  width: 400px;
-  height: 350px;
-  padding: 0 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.bg {
-  background-color: aqua;
+#header {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: aquamarine;
+}
+
+#header-wrapper {
+  display: flex;
+  background: #FFF;
+  margin: 0 auto;
+}
+
+#section-container {
+  height: 100%;
+  width: 100%;
+  background-color: bisque;
+}
+
+#section {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#section-wrapper {
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+}
+
+#footer {
+  margin: 0 auto;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  background-color: #1B9772;
+}
+
+#footer-wrapper {
+  margin: 0 auto;
+  display: flex;
 }

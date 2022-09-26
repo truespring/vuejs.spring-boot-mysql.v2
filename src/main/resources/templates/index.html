@@ -8,33 +8,63 @@
 </head>
 
 <body>
-<div id="aside">{{ aside }}</div>
-<div id="container">
-  <div id="header"> {{ header }}
-    <div id="header-content">
-      {{ header_content }}
+<div id="app">
+  <div id="aside-container">
+    <div id="aside-wrapper">
+      <div id="aside">
+        {{ aside }}
+      </div>
     </div>
   </div>
-  <div id="contents"> {{ contents }}</div>
-  <div id="footer" v-bind:class=' "bg" '> {{ footer }}</div>
+  <div id="container">
+    <div id="header-container">
+      <div id="header-wrapper">
+        <div id="header">
+          {{ header }}
+        </div>
+      </div>
+    </div>
+    <div id="section-container">
+      <div id="section-wrapper">
+        <div id="section">
+          {{ contents }}
+        </div>
+        <div id="test">
+          <button @click="submitBtn">post 해보자</button>
+          <button @click="submitBtn2">post2 해보자</button>
+        </div>
+      </div>
+    </div>
+    <div id="footer-container">
+      <div id="footer-wrapper">
+        <div id="footer">
+          {{ footer }}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="/ts/basic.ts"></script>
 <script src="/js/basic.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
+
   const vueConfigs = {
-    el: '#container', // 요소를 바꾸어 봅시다
+    el: '#app',
     data: {
       contents: '여기는 Vue의 영역',
       aside: '여기는 aside',
       header: '여기는 header',
-      footer: '여기는 footer',
-      header_content: ex()
+      footer: '여기는 footer'
+    },
+    methods: {
+      submitBtn,
+      submitBtn2
     }
   };
   const app = new Vue(vueConfigs);
-  app.$el.style.backgroundColor = 'yellow';
 
   console.log(ex())
   console.log(test())
